@@ -1,0 +1,71 @@
+/* Custom styles to complement Bootstrap */
+
+/* Cart section */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--bs-gray-700);
+}
+
+.cart-empty {
+    font-style: italic;
+    color: var(--bs-gray-500);
+}
+
+.product-card {
+    height: 100%;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styles */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Confirmation page styles */
+.confirmation-box {
+    background-color: var(--bs-success-bg-subtle);
+    border-left: 5px solid var(--bs-success);
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.page-header {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--bs-gray-700);
+}
+
+/* Make cards within the same row have equal height */
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-eq-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Product price display */
+.product-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--bs-info);
+}
+
+/* Sticky cart */
+@media (min-width: 992px) {
+    .sticky-cart {
+        position: sticky;
+        top: 2rem;
+    }
+}
