@@ -1,20 +1,17 @@
 import os
 import logging
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
-import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-import os
-from flask import Flask
-
+# Create the Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY')
-
+app.secret_key = os.environ.get('SECRET_KEY') # <- Only set this once
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
+
 
 # Create the Flask app
 app = Flask(__name__)
