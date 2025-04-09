@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+
+{% block title %}Checkout - Order System{% endblock %}
+
+{% block head %}
+<script>
+    function toggleOtherSchool() {
+        const schoolSelect = document.getElementById('school');
+        const otherSchoolDiv = document.getElementById('other-school-div');
+        const otherSchoolInput = document.getElementById('other-school');
+        
+        if (schoolSelect.value === 'Other') {
+            otherSchoolDiv.style.display = 'block';
+            otherSchoolInput.setAttribute('required', 'required');
+        } else {
+            otherSchoolDiv.style.display = 'none';
+            otherSchoolInput.removeAttribute('required');
+        }
+    }
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <h1>Checkout</h1>
+            <p class="lead">Complete your order information</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Your Information</h5>
+                <form id="checkout-form" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">
+                            Please provide your name.
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid email address.
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone">
+                        <small class="text-muted">Optional, but recommended for delivery coordination</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="school" class="form-label">Nearest School *</label>
+                        <select class="form-select" id="school" onchange="toggleOtherSchool()" required>
+                            <option value="" selected disabled>Select a school</option>
+                            {% for school in schools %}
+                            <option value="{{ school }}">{{ school }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select your nearest school for delivery/pickup.
+                        </div>
+                        <small class="text-muted">Your order will be delivered or available for pickup at this location</small>
+                    </div>
+                    
+                    <div class="mb-3" id="other-school-div" style="display: none;">
+                        <label for="other-school" class="form-label">Specify School *</label>
+                        <input type="text" class="form-control" id="other-school" placeholder="Enter your school name">
+                        <div class="invalid-feedback">
+                            Please specify your school.
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the terms and conditions
+                        </label>
+                        <div id="terms-feedback" class="invalid-feedback" style="display: none;">
+                            You must agree to the terms and conditions.
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary" id="submit-order-btn" onclick="submitOrder()">
+                            <i class="fas fa-paper-plane me-2"></i>Submit Order
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card sticky-cart mt-4 mt-lg-0">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-shopping-cart me-2"></i>Order Summary
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="cart">
+                    <!-- Cart items will be inserted here by JavaScript -->
+                </div>
+                
+                <hr>
+                
+                <div class="mb-3">
+                    <label for="discount-code" class="form-label">Discount Code</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="discount-code" placeholder="Enter code">
+                        <button class="btn btn-secondary" type="button" id="apply-discount-btn" onclick="applyDiscount()">
+                            Apply
+                        </button>
+                    </div>
+                    <div id="discount-feedback" class="mt-2"></div>
+                </div>
+                
+                <div id="discount-info" style="display: none;">
+                    <div class="d-flex justify-content-between text-muted">
+                        <span>Subtotal:</span>
+                        <span>$<span id="subtotal">0.00</span></span>
+                    </div>
+                    <div class="d-flex justify-content-between text-success">
+                        <span>Discount:</span>
+                        <span>-$<span id="discount-amount">0.00</span></span>
+                    </div>
+                    <hr class="my-2">
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>Total:</h5>
+                    <h5>$<span id="total">0.00</span></h5>
+                </div>
+                
+                <div class="d-grid">
+                    <a href="/" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

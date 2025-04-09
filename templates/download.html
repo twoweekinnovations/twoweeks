@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Download Project Files{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title text-center mb-4">Download Project Files</h1>
+                    
+                    <div class="text-center mb-4">
+                        <a href="{{ url_for('static', filename='two_week_innovations.zip') }}" class="btn btn-primary btn-lg">
+                            <i class="bi bi-download me-2"></i>Download ZIP File
+                        </a>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5>What's included in the ZIP file:</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Full Flask application code</li>
+                            <li class="list-group-item">HTML templates</li>
+                            <li class="list-group-item">CSS and JavaScript files</li>
+                            <li class="list-group-item">Requirements.txt with all dependencies</li>
+                            <li class="list-group-item">.env.example file for environment setup</li>
+                            <li class="list-group-item">README.md with installation instructions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h5>Installation Instructions:</h5>
+                        <ol>
+                            <li>Extract the ZIP file to a folder on your computer</li>
+                            <li>Create and activate a Python virtual environment</li>
+                            <li>Install requirements with <code>pip install -r requirements.txt</code></li>
+                            <li>Copy .env.example to .env and set your email credentials</li>
+                            <li>Run with <code>python main.py</code></li>
+                        </ol>
+                    </div>
+                    
+                    <div class="mt-4 text-center">
+                        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left me-2"></i>Return to Homepage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

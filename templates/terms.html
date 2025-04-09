@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Terms and Conditions - Two Week Innovations{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title mb-4">Terms and Conditions</h1>
+                    
+                    <!-- Terms and Conditions content -->
+                    <div id="terms-content">
+                        <section class="mb-4">
+                            <h2 class="h4 mb-3">Introduction</h2>
+                            <p>We are an independent stockist and are not affiliated with any companies such as Apple. All product names are used solely for identification purposes. We are not an authorized Apple reseller or reseller for any similar companies. No warranties apply. Terms and Conditions may be changed without notice.</p>
+                        </section>
+                        
+                        <section class="mb-4">
+                            <h2 class="h4 mb-3">Product Availability</h2>
+                            <p>Any products that are listed in the products have potential to run out. Products listed as coming soon are not guaranteed to be planned to be listed. All products are designed with all features advertised and found in similar products, authenticity varies from agent to agent and is second concern to functionality.</p>
+                        </section>
+                        
+                        <section class="mb-4">
+                            <h2 class="h4 mb-3">Prices</h2>
+                            <p>All sales are final and refunds may be granted under circumstances depending on factors. Prices are subject to change without notice. No payments are processed through this website and none are advised.</p>
+                        </section>
+                        
+                        <section class="mb-4">
+                            <h2 class="h4 mb-3">Customer Information</h2>
+                            <p>Any communications using email or phone numbers received through this website are unaffiliated and we are not liable for anything that may happen. We do not sell any information given through our website. Information gathered may be used for any uses we see fit.</p>
+                        </section>
+                    </div>
+                    
+                    <!-- Last updated timestamp -->
+                    <div class="mt-5 text-muted">
+                        <small>Last updated: April 2, 2025</small>
+                    </div>
+                    
+                    <!-- Back button -->
+                    <div class="mt-4">
+                        <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>Return to Homepage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

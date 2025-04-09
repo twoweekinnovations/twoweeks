@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block title %}Products - Order System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <h1>Select Products</h1>
+            <p class="lead">Browse our catalog and add items to your cart</p>
+        </div>
+        
+        {% for category in ['Electronics', 'Accessories'] %}
+        <h2 class="mt-4 mb-3">{{ category }}</h2>
+        <div class="row row-eq-height">
+            {% for product in products if product.category == category %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card product-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            {% if product.available %}
+                                <span class="product-price">${{ product.price }}</span>
+                                <button class="btn btn-primary" 
+                                        onclick="addToCart({{ product.id }}, '{{ product.name }}', {{ product.price }})">
+                                    <i class="fas fa-cart-plus me-1"></i> Add to Cart
+                                </button>
+                            {% else %}
+                                <span class="badge bg-secondary">Coming Soon</span>
+                                <button class="btn btn-outline-secondary" disabled>
+                                    <i class="fas fa-clock me-1"></i> Unavailable
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card sticky-cart mt-4 mt-lg-0">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-shopping-cart me-2"></i>Your Cart
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="cart">
+                    <!-- Cart items will be inserted here by JavaScript -->
+                </div>
+                
+                <hr>
+                
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5>Total:</h5>
+                    <h5>$<span id="total">0.00</span></h5>
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button id="checkout-btn" class="btn btn-success" onclick="goToCheckout()" disabled>
+                        <i class="fas fa-credit-card me-2"></i>Proceed to Checkout
+                    </button>
+                    <button class="btn btn-outline-secondary" onclick="clearCart()">
+                        <i class="fas fa-trash me-2"></i>Clear Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Initialize any page-specific JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        // Any additional initialization can go here
+    });
+</script>
+{% endblock %}
