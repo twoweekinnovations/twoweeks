@@ -13,11 +13,11 @@ app.secret_key = os.environ.get("SECRET_KEY", "thalia0419<3")
 logging.basicConfig(level=logging.DEBUG)
 
 # Email settings
-SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))
-SENDER_EMAIL = os.environ.get('SENDER_EMAIL', '')
-SENDER_PASSWORD = os.environ.get('SENDER_PASSWORD', '')
-RECEIVER_EMAIL = os.environ.get('RECEIVER_EMAIL', '')
+SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')  # SMTP Server (e.g., Gmail)
+SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))  # SMTP Port (587 for Gmail)
+SENDER_EMAIL = os.environ.get('EMAIL_FROM', '')  # Sender's email address
+SENDER_PASSWORD = os.environ.get('EMAIL_PASS', '')  # Sender's email password or app-specific password
+RECEIVER_EMAIL = os.environ.get('EMAIL_TO', 'twoweekinnovations@gmail.com')  # Receiver's email address
 
 # Product catalog organized by categories (in a real app, this would come from a database)
 PRODUCTS = [
