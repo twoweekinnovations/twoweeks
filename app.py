@@ -7,15 +7,10 @@ from email.mime.multipart import MIMEMultipart
 
 # Create the Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get('thalia0419<3') # <- Only set this once
+app.secret_key = os.environ.get("SESSION_SECRET", "thalia0419<3")
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
-
-
-# Create the Flask app
-app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET")
 
 # Email settings
 SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
