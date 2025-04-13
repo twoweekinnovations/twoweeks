@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG)
 SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')  # SMTP Server (e.g., Gmail)
 SMTP_PORT = int(os.environ.get('SMTP_PORT', 587))  # SMTP Port (587 for Gmail)
 SENDER_EMAIL = os.environ.get('EMAIL_FROM', '')  # Sender's email address
-SENDER_PASSWORD = os.environ.get('EMAIL_PASS', '')  # Sender's email password or app-specific password
+SENDER_PASSWORD = os.environ.get('EMAIL_PASS', 'iznf hcqu wplo cblw')  # Sender's email password or app-specific password
 RECEIVER_EMAIL = os.environ.get('EMAIL_TO', 'twoweekinnovations@gmail.com')  # Receiver's email address
 
 # Product catalog organized by categories (in a real app, this would come from a database)
