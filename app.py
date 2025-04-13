@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 
 # Create the Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "thalia0419<3")
+app.secret_key = os.environ.get("SECRET_KEY", "thalia0419<3")
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
