@@ -22,8 +22,8 @@ RECEIVER_EMAIL = os.environ.get('RECEIVER_EMAIL', 'twoweekinnovations@gmail.com'
 # Product catalog organized by categories (in a real app, this would come from a database)
 PRODUCTS = [
     # Electronics Category
-    {"id": 1, "category": "Electronics", "name": "AirPods Pro 2", "price": 139.00, "description": "Active Noise Cancellation and Transparency mode", "available": True},
-    {"id": 2, "category": "Electronics", "name": "AirPods 3rd Generation", "price": 99.00, "description": "Spatial Audio with dynamic head tracking", "available": True},
+    {"id": 1, "category": "Electronics", "name": "AirPods Pro 2", "price": 109.00, "description": "Active Noise Cancellation and Transparency mode", "available": True},
+    {"id": 2, "category": "Electronics", "name": "AirPods 3rd Generation", "price": 89.00, "description": "Spatial Audio with dynamic head tracking", "available": True},
     {"id": 3, "category": "Electronics", "name": "AirPods 2nd Generation", "price": 89.00, "description": "Double-tap to play or skip forward", "available": True},
     {"id": 4, "category": "Electronics", "name": "AirPods Max", "price": None, "description": "Coming soon - High-fidelity audio with Active Noise Cancellation", "available": False},
     {"id": 5, "category": "Electronics", "name": "AirPods 4 ANC", "price": None, "description": "Coming soon - Next generation AirPods with ANC", "available": False},
