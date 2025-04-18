@@ -24,14 +24,14 @@ PRODUCTS = [
     # Electronics Category
     {"id": 1, "category": "Electronics", "name": "AirPods Pro 2", "price": 109.00, "description": "Active Noise Cancellation and Transparency mode", "available": True},
     {"id": 2, "category": "Electronics", "name": "AirPods 3rd Generation", "price": 89.00, "description": "Spatial Audio with dynamic head tracking", "available": True},
-    {"id": 3, "category": "Electronics", "name": "AirPods 2nd Generation", "price": 89.00, "description": "Double-tap to play or skip forward", "available": True},
+    {"id": 3, "category": "Electronics", "name": "AirPods 2nd Generation", "price": 79.00, "description": "Double-tap to play or skip forward", "available": True},
     {"id": 4, "category": "Electronics", "name": "AirPods Max", "price": None, "description": "Coming soon - High-fidelity audio with Active Noise Cancellation", "available": False},
     {"id": 5, "category": "Electronics", "name": "AirPods 4 ANC", "price": None, "description": "Coming soon - Next generation AirPods with ANC", "available": False},
     {"id": 6, "category": "Electronics", "name": "Apple Lightning Cable", "price": None, "description": "Coming soon - Official Apple Lightning Cable", "available": False},
     {"id": 7, "category": "Electronics", "name": "Apple Watch SE", "price": None, "description": "Coming soon - The affordable Apple Watch option", "available": False},
     
     # Accessories Category
-    {"id": 8, "category": "Accessories", "name": "UGGs Tasman", "price": 79.00, "description": "Comfortable and stylish boots", "available": True},
+    {"id": 8, "category": "Accessories", "name": "UGGs Tasman", "price": 89.00, "description": "Comfortable and stylish boots", "available": True},
     {"id": 9, "category": "Accessories", "name": "Crocs", "price": None, "description": "Coming soon - Comfortable casual footwear", "available": False},
     {"id": 10, "category": "Accessories", "name": "Nike Dunks", "price": None, "description": "Coming soon - Classic Nike sneakers", "available": False}
 ]
